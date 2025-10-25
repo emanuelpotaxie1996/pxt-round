@@ -1,0 +1,21 @@
+{
+    "name": "Round",
+    "version": "1.0.0",
+    "description": "Rounds any number perfectly",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "round"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "targetVersions": {
+        "target": "8.0.16",
+        "pxt": "12.1.8"
+    }
+}
