@@ -1,27 +1,27 @@
 /**
- * Rounds any not integer number perfectly
- * @param number number to round
+ * Rounds any number perfectly
+ * @param x number to round
  */
 //% blockNamespace=Math
-//% block="round $number perfectly" weight="0"
-function Round(number: number): number {
-    if (Math.floor(number * 10) % 10 > 4) {
-        return Math.floor(number) + 1;
+//% block="round $x" weight=0
+function Round(x: number): number {
+    if (x - Math.floor(x) === 0) {
+        return x;
     } else {
-        const dec = number.toString().split(".")[1];
-        const arr_dec = dec.split("").map(n => parseInt(n));
-        while (arr_dec.length > 1) {
-            if (arr_dec[arr_dec.length - 1] > 4) {
-                arr_dec.pop();
-                arr_dec[arr_dec.length - 1] = arr_dec[arr_dec.length - 1] + 1;
-            } else {
-                arr_dec.pop();
+        const dec: number = Number(String(x).split(".")[1]);
+        const arrDec: number[] = [];
+        for (const v of dec) {
+            arrDec.push(v);
+        }
+        while (arrDec.length > 1) {
+            if (arrDec.pop() > 4) {
+                arrDec[-1]++;
             }
         }
-        if (arr_dec[0] < 5) {
-            return Math.floor(number);
+        if (arrDec[0] < 5) {
+            return Math.floor(x);
         } else {
-            return Math.floor(number) + 1;
+            return Math.floor(x) + 1;
         }
     }
 }
