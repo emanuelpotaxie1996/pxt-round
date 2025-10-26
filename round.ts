@@ -8,10 +8,10 @@ function Round(x: number): number {
     if (x - Math.floor(x) === 0) {
         return x;
     } else {
-        const dec: number = Number(String(x).split(".")[1]);
+        const dec: string = x.toString().split(".")[1];
         const arrDec: number[] = [];
         for (const v of dec) {
-            arrDec.push(v);
+            arrDec.push(parseInt(v));
         }
         while (arrDec.length > 1) {
             if (arrDec.pop() > 4) {
